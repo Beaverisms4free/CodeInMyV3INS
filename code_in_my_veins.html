@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code in My Veins - Synced Lyric Video</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.25;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .lyrics p {
+      font-size: 1.2rem;
+      max-width: 80%;
+      margin: 1.5rem auto;
+      opacity: 0;
+      animation: revealText 2s ease-in-out forwards;
+    }
+    .lyrics p:nth-child(1) { animation-delay: 2s; }
+    .lyrics p:nth-child(2) { animation-delay: 7s; }
+    .lyrics p:nth-child(3) { animation-delay: 15s; }
+    .lyrics p:nth-child(4) { animation-delay: 23s; }
+    .lyrics p:nth-child(5) { animation-delay: 31s; }
+    .lyrics p:nth-child(6) { animation-delay: 40s; }
+    .lyrics p:nth-child(7) { animation-delay: 49s; }
+    .lyrics p:nth-child(8) { animation-delay: 58s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes revealText {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .controls {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 2;
+    }
+    .controls button {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    audio {
+      display: none;
+    }
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: white;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <video class="bg-video" autoplay muted loop>
+    <source src="neos-robotics-dec-2-2019_O0PPSgml.mp4" type="video/mp4">
+  </video>
+
+  <div class="controls">
+    <button onclick="document.getElementById('track').play()">Play</button>
+    <button onclick="document.getElementById('track').pause()">Pause</button>
+  </div>
+
+  <audio id="track" src="Chopped_vocal_sample_Lets_go.wav" preload="auto"></audio>
+
+  <div class="container">
+    <h1>Code in My Veins</h1>
+    <div class="lyrics">
+      <p>Yeah—reef zone ready, we bootin’ up. FIRST life. Let’s go.</p>
+      <p>I got code in my veins, drive in my core... It's our time now, yeah we built for more.</p>
+      <p>We don’t stop, we reroute... We’re FIRST, we lead from deep within.</p>
+      <p>Scouting in real time, runtime flows... We aim for more than bots can reach.</p>
+      <p>We don’t stop, we reroute... We’re FIRST, we lead from deep within.</p>
+      <p>Hands in the pit from every team... Together we plant that future seed.</p>
+      <p>We don’t stop, we reroute... We’re FIRST, we lead from deep within.</p>
+      <p>FIRST fam rise, one voice, one team— We live the mission, build the dream.</p>
+    </div>
+  </div>
+
+  <footer>FIRST Robotics • FRC 2025 • REEFSCAPE • Code in My Veins</footer>
+</body>
+</html>
